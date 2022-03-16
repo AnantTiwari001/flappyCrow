@@ -5,6 +5,9 @@ let canvas = document.getElementById("canvas");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
+let bWidth= 26;
+let bHeight= 35;
+
 let gameOverH= document.getElementById('gameOver');
 let restart= document.getElementById('restart');
 restart.addEventListener('click', function() {
@@ -66,7 +69,7 @@ function pipes() {
     let yUp = 122 + pipeArray[i].y + pGapY;
     c.drawImage(pipeup, pipeArray[i].x, yUp, 20, 320);
     c.drawImage(ground, 0, window.innerHeight - ground.height);
-    c.drawImage(bird, xB, yB);
+    c.drawImage(bird, xB, yB, bWidth, bHeight);
     pipeArray[i].x--;
     if (pipeArray[i].x == 1000) {
       // console.log("Its beyound sir!");
@@ -79,19 +82,23 @@ function pipes() {
     //   alert('You are a  loser');
     //   // location.reload();
     // }
-    if (pipeArray[i].x == 101) {
+    if (pipeArray[i].x == 101+bWidth) {
       let pipeIY = pipeArray[i].y;
-      if (yB > pipeIY + 122 && yB+bird.height < yUp) {
+      if (yB > pipeIY + 122 && yB+bHeight < yUp) {
         // alert(
         //   "doing well and you score ++ \n the new console should print 100"
         // );
         score++
         // console.log(pipeIY + 122 - yUp);
       } else {
-        alert(
-          "You are a  loser and as useaul you have lost again and thanks for that loser! else"
-        );
-        break;
+        // alert(
+        //   "You are a  loser and as useaul you have lost again and thanks for that loser! else"
+        // );
+        canvas.style.display= 'none';
+        gameOverH.style.display= 'block';
+        
+
+        // break;
         // location.reload();
       }
     }
