@@ -51,6 +51,10 @@ pipeArray[0] = {
   y: 0,
 };
 
+document.addEventListener('click', function(){
+  yB-=30;
+})
+
 document.addEventListener("keydown", function () {
   // run= false
   // console.log('Yes man a key is pressed!')
