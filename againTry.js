@@ -42,7 +42,7 @@ function gameOver() {
   game= false;
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
   canvas.style.display = "none";
-  gameOver.style.display= 'block';
+  gameOverH.style.display= 'block';
 }
 
 let pipeArray = [];
@@ -50,6 +50,10 @@ pipeArray[0] = {
   x: 1100,
   y: 0,
 };
+
+document.addEventListener('click', function(){
+  yB-=30;
+})
 
 document.addEventListener("keydown", function () {
   // run= false
@@ -107,6 +111,10 @@ function pipes() {
     c.fillText("Score: " + score, 10, 50);
   }
   yB += 1.2;
+  if(yB+bHeight> canvas.height-ground.height){
+    console.log('yo yo boy! you did great');
+    gameOver();
+  }
   // c.fillStyle= '#000;';
   // c.font='20px Verdana';
   // c.fillText('Score: '+ score, window.height)
