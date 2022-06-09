@@ -67,7 +67,7 @@ function pipes() {
   for (var i = 0; i < pipeArray.length; i++) {
     c.drawImage(pipe, pipeArray[i].x, pipeArray[i].y, 20, 122);
     let yUp = 122 + pipeArray[i].y + pGapY;
-    c.drawImage(pipeup, pipeArray[i].x, yUp, 20, 380);
+    c.drawImage(pipeup, pipeArray[i].x, yUp, 20, 480);
     c.drawImage(ground, 0, window.innerHeight - ground.height);
     c.drawImage(bird, xB, yB, bWidth, bHeight);
     pipeArray[i].x--;
