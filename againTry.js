@@ -43,6 +43,9 @@ function gameOver() {
   c.clearRect(0, 0, window.innerWidth, window.innerHeight);
   canvas.style.display = "none";
   gameOverH.style.display= 'block';
+  setTimeout(() => {
+    location.reload();
+  }, 1000);
 }
 
 let pipeArray = [];
